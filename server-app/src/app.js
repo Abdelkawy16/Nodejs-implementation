@@ -21,10 +21,10 @@ hbs.registerPartials(partialsPath);
 // setup static directory to serve
 app.use(express.static(publicDirectoryPath));
 
-app.get('', (req, res) => res.render('index', { title: "Weather", name: "Mustafa" }));
-app.get('/about', (req, res) => res.render('about', { name: 'Mustafa', title: 'About me' }));
-app.get('/help', (req, res) => res.render('help', { name: 'Mustafa', title: 'Help', message: 'This is some helpfull articles' }));
-app.get('/help/*', (req, res) => res.render('error', { name: 'Mustafa', title: 'Help', message: 'Help article not found' }));
+app.get('', (req, res) => res.render('index', { title: "Weather", name: "Mustafa Abdelkawy" }));
+app.get('/about', (req, res) => res.render('about', { name: 'Mustafa Abdelkawy', title: 'About me' }));
+app.get('/help', (req, res) => res.render('help', { name: 'Mustafa Abdelkawy', title: 'Help', message: 'This is some helpfull article' }));
+app.get('/help/*', (req, res) => res.render('error', { name: 'Mustafa Abdelkawy', title: 'Help', message: 'Help article not found' }));
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.send({ error: 'You must provide an address!' });
@@ -42,6 +42,6 @@ app.get('/weather', (req, res) => {
         });
     });
 });
-app.get('*', (req, res) => res.render('error', { title: '404', name: 'Mustafa', message: 'Page not found' }));
+app.get('*', (req, res) => res.render('error', { title: '404', name: 'Mustafa Abdelkawy', message: 'Page not found' }));
 
 app.listen(port, () => console.log(`Server is up on port ${port}!`));
